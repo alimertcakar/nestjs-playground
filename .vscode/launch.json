@@ -1,0 +1,10 @@
+{
+    //should run command "npm run start:debug -nodemon" first then attach to the debug process
+    "type": "node",
+    "request": "attach",
+    "name": "Attach NestJS Debugger",
+    "port": 9229,
+    "restart": true,
+    "stopOnEntry": false,
+    "protocol": "inspector"
+},
