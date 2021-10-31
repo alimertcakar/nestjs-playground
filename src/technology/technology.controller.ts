@@ -1,18 +1,31 @@
-import { Body, Controller, Get, Post, Req } from '@nestjs/common';
+import { TechnologyService } from './technology.service';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  Req,
+} from '@nestjs/common';
 import { Request } from 'express';
+import { CreateTechDto } from 'src/dtos/CreateTech';
 
 @Controller('tech')
 export class TechnologyController {
-  @Get('all')
-  findAll(@Req() request: Request) {
-    console.log(request);
-    debugger;
-    return 'hi';
-  }
+  constructor(private technologyService: TechnologyService) {}
 
   @Post()
-  createTech(@Req() request: Request, @Body() body: Body) {
+  createTech(@Req() request: Request, @Body() body: CreateTechDto) {
     console.log(body, 'body');
-    console.log('created tech');
+    return 'yo';
+  }
+
+  @Get()
+  get(@Query() query: any) {
+    console.log(query, 'query');
+    return this.technologyService.findAll();
   }
 }
