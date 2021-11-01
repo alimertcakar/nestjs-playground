@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class TechnologyService {
-  private technologies = ['nodejs'];
+  private technologies = new Map();
 
-  create(technology: string) {
-    this.technologies.push(technology);
+  create(key: string, value: string) {
+    this.technologies.set(key, value);
+  }
+
+  findOne(key: string) {
+    return this.technologies.get(key);
   }
 
   findAll() {

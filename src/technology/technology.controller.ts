@@ -9,9 +9,12 @@ import {
   Post,
   Query,
   Req,
+  NotFoundException,
+  NotImplementedException,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { CreateTechDto } from 'src/dtos/CreateTech';
+import { CreateTechDto } from 'src/dto/CreateTech';
+import _ from 'lodash';
 
 @Controller('tech')
 export class TechnologyController {
@@ -19,13 +22,11 @@ export class TechnologyController {
 
   @Post()
   createTech(@Req() request: Request, @Body() body: CreateTechDto) {
-    console.log(body, 'body');
     return 'yo';
   }
 
   @Get()
   get(@Query() query: any) {
-    console.log(query, 'query');
-    return this.technologyService.findAll();
+    throw new NotImplementedException();
   }
 }
