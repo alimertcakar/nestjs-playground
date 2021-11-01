@@ -13,7 +13,7 @@ import {
   NotImplementedException,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { CreateTechDto } from 'src/dto/CreateTech';
+import { CreateTechDto } from 'src/dto/craete-tech';
 import _ from 'lodash';
 
 @Controller('tech')
