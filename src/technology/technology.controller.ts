@@ -1,3 +1,4 @@
+import { UpdateTechDto } from './../dto/update-tech';
 import { TechnologyService } from './technology.service';
 import {
   Body,
@@ -21,12 +22,12 @@ export class TechnologyController {
   constructor(private technologyService: TechnologyService) {}
 
   @Post()
-  createTech(@Req() request: Request, @Body() body: CreateTechDto) {
+  createTech(@Req() request: Request, @Body() body: UpdateTechDto) {
     return 'yo';
   }
 
   @Get()
-  get(@Query() query: any) {
+  get(@Query() query: any, @Body() body: CreateTechDto) {
     throw new NotImplementedException();
   }
 }
