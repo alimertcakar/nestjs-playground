@@ -1,4 +1,5 @@
-import { PartialType } from '@nestjs/mapped-types';
 import { CreateTechDto } from './create-tech';
+import { PartialType } from '@nestjs/swagger';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class UpdateTech extends PartialType(CreateTechDto) {}
+export class UpdateTechDto extends PartialType(CreateTechDto) {}

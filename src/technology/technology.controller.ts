@@ -1,3 +1,4 @@
+import { UpdateTechDto } from './../dto/update-tech';
 import { TechnologyService } from './technology.service';
 import {
   Body,
@@ -13,20 +14,20 @@ import {
   NotImplementedException,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { CreateTechDto } from 'src/dto/create-tech';
 import _ from 'lodash';
+import { CreateTechDto } from 'src/dto/create-tech';
 
 @Controller('tech')
 export class TechnologyController {
   constructor(private technologyService: TechnologyService) {}
 
   @Post()
-  createTech(@Req() request: Request, @Body() body: CreateTechDto) {
+  createTech(@Req() request: Request, @Body() body: UpdateTechDto) {
     return 'yo';
   }
 
   @Get()
-  get(@Query() query: any) {
+  get(@Query() query: any, @Body() body: CreateTechDto) {
     throw new NotImplementedException();
   }
 }
