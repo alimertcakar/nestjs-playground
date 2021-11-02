@@ -27,7 +27,7 @@ async function bootstrap() {
     swaggerOptions: {
       persistAuthorization: true,
     },
-    customSiteTitle: 'My API Docs',
+    customSiteTitle: 'Portfolio API Docs',
   };
   SwaggerModule.setup('api', app, document, customOptions);
 
