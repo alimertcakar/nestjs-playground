@@ -6,7 +6,7 @@ import { WorkModule } from 'src/work/work.module';
 import { WorkService } from 'src/work/work.service';
 
 @Module({
-  controllers: [TechnologyController],
+  controllers: [TechnologyController, WorkController],
   providers: [TechnologyService],
   exports: [],
   imports: [WorkModule],

@@ -1,4 +1,3 @@
-import { UpdateTechDto } from './../dto/update-tech';
 import { TechnologyService } from './technology.service';
 import {
   Body,
@@ -15,8 +14,9 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import _ from 'lodash';
-import { CreateTechDto } from 'src/dto/create-tech';
 import { WorkService } from 'src/work/work.service';
+import { UpdateTechDto } from './dto/update-tech';
+import { CreateTechDto } from './dto/create-tech';
 
 @Controller('tech')
 export class TechnologyController {
